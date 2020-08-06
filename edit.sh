@@ -3,7 +3,7 @@
 ########################################################
 
 # configure /conf/inter_athena.conf
-cat << EOF > ${RAGNAROK_DIR}/conf/inter_athena.conf
+cat << EOF > rAthena/conf/inter_athena.conf
 // Athena InterServer configuration.
 // Contains settings shared/used by more than 1 server.
 // Options for both versions
@@ -16,44 +16,44 @@ party_share_level: 15
 // You can specify the codepage to use in your MySQL tables here.
 // (Note that this feature requires MySQL 4.1+)
 //default_codepage:
-// For IPs, ideally under linux, you want to use localhost instead of 127.0.0.1
-// Under windows, you want to use 127.0.0.1.  If you see a message like
+// For IPs, ideally under linux, you want to use localhost instead of http://192.168.110.129/phpmyadmin/
+// Under windows, you want to use http://192.168.110.129/phpmyadmin/.  If you see a message like
 // "Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)"
-// and you have localhost, switch it to 127.0.0.1
+// and you have localhost, switch it to http://192.168.110.129/phpmyadmin/
 // Global SQL settings
 // overridden by local settings when the hostname is defined there
 // (currently only the login-server reads/obeys these settings)
 // MySQL Login server
-login_server_ip: 127.0.0.1
-login_server_port: 3306
-login_server_id: ${MYSQL_RAGNAROK_USER}
-login_server_pw: ${MYSQL_RAGNAROK_PW}
-login_server_db: ${MYSQL_RAGNAROK_DB}
+login_server_ip: http://192.168.110.129/phpmyadmin/
+login_server_port: 80
+login_server_id: root
+login_server_pw: bernard188706
+login_server_db: ragnarok
 login_codepage:
 login_case_sensitive: no
-ipban_db_ip: 127.0.0.1
-ipban_db_port: 3306
-ipban_db_id: ${MYSQL_RAGNAROK_USER}
-ipban_db_pw: ${MYSQL_RAGNAROK_PW}
-ipban_db_db: ${MYSQL_RAGNAROK_DB}
+ipban_db_ip: http://192.168.110.129/phpmyadmin/
+ipban_db_port: 80
+ipban_db_id: root
+ipban_db_pw: bernard188706
+ipban_db_db: ragnarok
 ipban_codepage:
 // MySQL Character server
-char_server_ip: 127.0.0.1
-char_server_port: 3306
-char_server_id: ${MYSQL_RAGNAROK_USER}
-char_server_pw: ${MYSQL_RAGNAROK_PW}
-char_server_db: ${MYSQL_RAGNAROK_DB}
+char_server_ip: http://192.168.110.129/phpmyadmin/
+char_server_port: 80
+char_server_id: root
+char_server_pw: bernard188706
+char_server_db: ragnarok
 // MySQL Map Server
-map_server_ip: 127.0.0.1
-map_server_port: 3306
-map_server_id: ${MYSQL_RAGNAROK_USER}
-map_server_pw: ${MYSQL_RAGNAROK_PW}
-map_server_db: ${MYSQL_RAGNAROK_DB}
+map_server_ip: http://192.168.110.129/phpmyadmin/
+map_server_port: 80
+map_server_id: root
+map_server_pw: bernard188706
+map_server_db: ragnarok
 // MySQL Log Database
-log_db_ip: 127.0.0.1
-log_db_port: 3306
-log_db_id: ${MYSQL_RAGNAROK_USER}
-log_db_pw: ${MYSQL_RAGNAROK_PW}
+log_db_ip: http://192.168.110.129/phpmyadmin/
+log_db_port: 80
+log_db_id: root
+log_db_pw: bernard188706
 log_db_db: logging
 log_codepage:
 log_login_db: loginlog
@@ -145,7 +145,7 @@ EOF
 
 # Configuration for conf/char_athena.conf
 # See: https://github.com/rathena/rathena/blob/master/conf/char_athena.conf
-cat << EOF > ${RAGNAROK_DIR}/conf/char_athena.conf
+cat << EOF > rAthena/conf/char_athena.conf
 // Athena Character configuration file.
 // Note: "Comments" are all text on the right side of a double slash "//"
 // Whatever text is commented will not be parsed by the servers, and serves
@@ -164,7 +164,7 @@ wisp_server_name: Server
 // The character server connects to the login server using this IP address.
 // NOTE: This is useful when you are running behind a firewall or are on
 // a machine with multiple interfaces.
-login_ip: 127.0.0.1
+login_ip: http://192.168.110.129/phpmyadmin/
 // The character server listens on the interface with this IP address.
 // NOTE: This allows you to run multiple servers on multiple interfaces
 // while using the same ports for each server.
@@ -382,7 +382,7 @@ EOF
 
 # Configuration for conf/map_athena.conf
 # See: https://github.com/rathena/rathena/blob/master/conf/map_athena.conf
-cat << EOF > ${RAGNAROK_DIR}/conf/map_athena.conf
+cat << EOF > rAthena/conf/map_athena.conf
 //--------------------------------------------------------------
 //rAthena Map-Server Configuration File
 //--------------------------------------------------------------
@@ -399,7 +399,7 @@ passwd: p1
 // The map server connects to the character server using this IP address.
 // NOTE: This is useful when you are running behind a firewall or are on
 // a machine with multiple interfaces.
-char_ip: 127.0.0.1
+char_ip: http://192.168.110.129/phpmyadmin/
 // The map server listens on the interface with this IP address.
 // NOTE: This allows you to run multiple servers on multiple interfaces
 // while using the same ports for each server.
@@ -494,7 +494,7 @@ EOF
 
 # Configuration for conf/login_athena.conf
 # See: https://github.com/rathena/rathena/blob/master/conf/login_athena.conf
-cat << EOF > ${RAGNAROK_DIR}/conf/login_athena.conf
+cat << EOF > rAthena/conf/login_athena.conf
 // Athena Login Server configuration file.
 // Translated by Peter Kieser <pfak@telus.net>
 // Note: "Comments" are all text on the right side of a double slash "//"
@@ -648,7 +648,7 @@ EOF
 
 # Configuration for /src/config/packets.hpp
 # See: https://github.com/rathena/rathena/blob/master/src/config/packets.hpp
-cat << EOF > ${RAGNAROK_DIR}/src/config/packets.hpp
+cat << EOF > rAthena/src/config/packets.hpp
 // Copyright (c) rAthena Dev Teams - Licensed under GNU GPL
 // For more information, see LICENCE in the main folder
 #ifndef CONFIG_PACKETS_HPP
@@ -711,7 +711,7 @@ cat << EOF > ${RAGNAROK_DIR}/src/config/packets.hpp
 EOF
 
 # Configure motd
-cat << EOF > ${RAGNAROK_DIR}/conf/motd.text
+cat << EOF > rAthena/conf/motd.text
 ${SERVER_MOTD}
 EOF
 
